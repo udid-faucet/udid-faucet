@@ -200,6 +200,11 @@ function attachEvents() {
     $("#exchange").click(async () => {
 
         let number = parseInt(parseFloat($("#input_usdt").val()) * 1e6)
+        if(isNaN(number) || number == 0){
+            showMsg("请输入大于0的数字/浮点数")
+            return
+        }
+        
         let balance = window.app.usdtBalance
 
         if (number - balance > 0) {
