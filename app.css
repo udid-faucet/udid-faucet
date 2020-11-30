@@ -1,0 +1,527 @@
+@media screen and (min-device-width: 661px){
+body {
+  background: url('./static/bkg.png');
+  background-repeat: repeat-x;
+  width: auto;
+}
+#top_basic {
+  width: 100%;
+  height: 268px;
+  padding-top: 22px;
+}
+
+.claim_card,
+.center_card {
+  width: 80%;
+  margin: 0 0 0 10%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.11);
+  border-radius: 8px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.center_card {
+  height: 350px;
+}
+
+.hop_card {
+  width: 75%;
+  /* height: 120px; */
+  margin: 3% 0 0 10%;
+  padding: 2% 0 2% 5%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.11);
+  border-radius: 8px;
+}
+#network {
+  width: 200px;
+  height: 32px;
+  margin: 0 0 0 13%;
+  display: inline-flex;
+  border-radius: 15px;
+  border: 2px solid #CACCCD;
+}
+.basic_title {
+  font-size: 26px;
+  font-family: Lato-Bold, Lato;
+  font-weight: bold;
+  color: #1E2024;
+  line-height: 32px;
+}
+.basic_con {
+  display: flex;
+  font-size: 18px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #AAACAD;
+  /* line-height: 37px; */
+}
+#basic_rate {
+  font-size: 26px;
+  font-family: Lato-Semibold, Lato;
+  font-weight: 600;
+  color: #1E2024;
+  /* line-height: 32px; */
+  line-height: 91px;
+  text-align: center;
+}
+#line {
+  width: 80%;
+  height: 1px;
+  margin: 0 0 2% 80px;
+  background: #E1E5E7;
+}
+#dot {
+  width: 6px;
+  height: 6px;
+  margin: 7% 10px 0 8%;
+  background: #44D7B6;
+  border-radius: 3px;
+}
+#network_type {
+  font-size: 18px;
+  font-family: Lato-Regular, Lato;
+  font-weight: 400;
+  color: #1E2024;
+  line-height: 32px;
+}
+#input_usdt {
+  height: 42px;
+}
+#append_value,
+#append_address,
+#input_usdt,
+#new_rate,
+#f_addr,
+#b_addr {
+  width: 70%;
+  background: #F6F7F8;
+  border-radius: 15px;
+  border: 1px solid #E7EAEC;
+}
+#append_value,
+#append_address,
+#new_rate,
+#f_addr,
+#b_addr {
+  margin: 3px 6px 0 0;
+  height: 30px;
+}
+#new_rate {
+  width: 61%;
+}
+#append_value,
+#append_address,
+#f_addr,
+#b_addr {
+  width: 30%;
+}
+#all {
+  width: 58px;
+  height: 28px;
+  font-size: 18px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 25px;
+  margin: 4px 0 0 30%;
+  color: #F28552;
+  background: rgba(242, 133, 82, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgba(242, 133, 82, 0.5);
+}
+#basic_hop {
+  width: 60%;
+  padding-left: 12%;
+  font-size: 1.2rem;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #1E2024;
+  line-height: 54px;
+}
+#handle_btns {
+  margin: 45px 0 0 36%;
+  /* justify-content: space-between; */
+}
+#exchange,
+#claim {
+  height: 42px;
+  line-height: 34px;
+  margin: 6px 6px 0 0;
+}
+#update,
+#claim,
+#exchange,
+#approve_hop,
+#set_rate,
+#append,
+#change_address {
+  width: 44%;
+  background: #F28552;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-family: Lato-Bold, Lato;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-width: 0px !important;
+}
+#approve_hop {
+  height: 37px;
+  line-height: 20px;
+  margin: 2px 0 0 10px;
+  margin-top: 2px;
+}
+.claim_rule,
+.remaining {
+  width: 100%;
+  height: 40px;
+  background: #F7F9F9;
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #1E2024;
+  line-height: 40px;
+}
+.remaining {
+  bottom: 0;
+  /* padding-left: 5%; */
+  position: absolute;
+}
+#balances {
+  display: flex;
+  margin-top: 22px;
+  margin-left: 18%;
+}
+#account {
+  margin-left: 18%;
+  margin-top: 42px;
+}
+#change, #change_hop, #approve_btn {
+  display: flex;
+}
+#approve_btn {
+  margin: 10px 0 5px 0;
+}
+#change_hop {
+  width: 60%;
+}
+#change_usdt {
+  width: 57%;
+}
+#change_usdt_input {
+  margin: 8px 0 8px 30%;
+}
+.input_line {
+  display: flex;
+  margin: 1% 4% 2% 0;
+}
+#claim_btn {
+  width: 90px;
+  height: 32px;
+  background: #F28552;
+  border-radius: 11px;
+  font-size: 0.8rem;
+  color: #FFFFFF;
+  border-width: 0px !important;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  line-height: 32px;
+  /* margin: 54px 0 0 -37px; */
+}
+
+#sell_record {
+  width: 100%;
+  height: 300px;
+  background: #F6F7F8;
+  border-radius: 15px;
+  border: 1px solid #E7EAEC;
+  margin: 3px 6px 0 0;
+}
+}
+
+@media screen and (max-device-width: 660px) {
+  body {
+  background: #F0F2F3;
+
+  width: auto;
+  }
+  #top_basic {
+      width: 100%;
+      height: 178px;
+      padding-top: 22px;
+      position: relative;
+      background: url('./static/iPhone/bg-png.png');
+      background-repeat: repeat-x;
+  }
+
+  .claim_card,
+  .center_card {
+      width: 92%;
+      margin: 0 0 0 4%;
+      background-color: #FFFFFF;
+      box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.11);
+      border-radius: 12px;
+      position: relative;
+  }
+  .center_card {
+    height: 235px;
+  }
+  .hop_card {
+      width: 87%;
+      /* height: 180px; */
+      margin: 3% 0 0 4%;
+      padding: 2% 0 2% 5%;
+      background-color: #FFFFFF;
+      box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.11);
+      border-radius: 12px;
+      position: relative;
+  }
+  #network {
+      width: 170px;
+      height: 26px;
+      margin: 0 0 0 23%;
+      display: inline-flex;
+      position: absolute;
+      right: 16px;
+      border-radius: 15px;
+      border: 2px solid #CACCCD;
+      background: #FFFFFF;
+  }
+  .basic_title {
+      height: 24px;
+      font-size: 0.9rem;
+      font-family: Lato-Bold, Lato;
+      font-weight: bold;
+      color: #1E2024;
+      line-height: 24px;
+  }
+  .basic_con {
+      /* width: 120px; */
+      height: 20px;
+      font-size: 0.6rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #AAACAD;
+      /* line-height: 20px; */
+      display: flex;
+  }
+  #basic_rate {
+      height: 22px;
+      font-size: 18px;
+      font-family: Lato-Regular, Lato;
+      font-weight: 400;
+      color: #1E2024;
+      line-height: 54px;
+      margin-left: 4%;
+  }
+  #line {
+      width: 96%;
+      /* width: 319px; */
+      height: 1px;
+      /* margin: 100px 0 0 2%; */
+      margin-left: 2%;
+      position: absolute;
+      top: 100px;
+      background: #F6F7F8;
+      border-radius: 15px;
+  /* border: 1px solid #E7EAEC; */
+  }
+  #dot {
+      width: 6px;
+      height: 6px;
+      margin: 6% 10px 0 8%;
+      background: #44D7B6;
+      border-radius: 3px;
+  }
+  #network_type {
+      font-size: 14px;
+      font-family: Lato-Regular, Lato;
+      font-weight: 400;
+      color: #1E2024;
+      line-height: 24px;
+  }
+  #input_usdt {
+      width: 100%;
+      height: 36px;
+      margin: 40px 0 0 5%;
+      /* background: #F6F7F8; */
+      border-radius: 15px;
+      border: 0 !important;
+  /* border: 1px solid #E7EAEC; */
+  }
+  #append_address,
+  #append_value,
+  #new_rate,
+  #f_addr,
+  #b_addr {
+    width: 90%;
+    background: #F6F7F8;
+    border-radius: 15px;
+    border: 1px solid #E7EAEC;
+    margin: 3px 6px 10px 10px;
+    height: 30px;
+  }
+  #all {
+      width: 48px;
+      height: 24px;
+      font-size: 0.8rem;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      line-height: 20px;
+      margin: 45px 10% 0 0;
+      color: #F28552;
+      background: rgba(242, 133, 82, 0.1);
+      border-radius: 10px;
+      border: 0 !important;
+  }
+  #basic_hop {
+      padding-right: 10%;
+      font-size: 16px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #1E2024;
+      line-height: 54px;
+  /* font-size: 26px; */
+  }
+  #claim,
+  #exchange {
+    height: 45px;
+    /* line-height: 34px; */
+    margin: 6px 0 0 5%;
+  }
+  #claim,
+  #exchange,
+  #approve_hop {
+    width: 90%;
+    background: #F28552;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-family: Lato-Bold, Lato;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 23px;
+    border-width: 0px !important;
+  }
+  #approve_hop {
+    height: 25px;
+    margin: 6px 0 0 2%;
+  }
+  .claim_rule,
+  .remaining {
+  width: 100%;
+  height: 20px;
+  background: #F7F9F9;
+  border-radius: 8px;
+  font-size: 0.8px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #1E2024;
+  line-height: 20px;
+  }
+  .remaining {
+    bottom: 0;
+    position: absolute;
+  }
+  #account {
+      margin-left: 5%;
+      margin-top: 42px;
+  }
+  #balances {
+      display: flex;
+      margin-top: 22px;
+      margin-left: 5%;
+  }
+  #change_usdt, #change_hop {
+      display: flex;
+      justify-content: space-between;
+  }
+  #change_hop {
+      margin-left: 3%;
+  }
+  #approve_btn {
+    /* display: flex; */
+    margin: 10px 0 5px 0;
+    /* justify-content: space-between; */
+  }
+  #update,
+  #append,
+  #set_rate,
+  #change_address {
+    width: 90%;
+    height: 42px;
+    margin: 2px 0 0 10px;
+    background: #F28552;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-family: Lato-Bold, Lato;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-width: 0px !important;
+  }
+
+  .input_line {
+    margin: 1% 4% 2% 0;
+  }
+  #claim_btn {
+    width: 70px;
+    height: 28px;
+    background: #F28552;
+    border-radius: 11px;
+    font-size: 0.6rem;
+    color: #FFFFFF;
+    border-width: 0px !important;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    line-height: 28px;
+    /* margin: 40px 0 0 -30px; */
+  }
+  #sell_record {
+    width: 90%;
+    height: 300px;
+    background: #F6F7F8;
+    border-radius: 15px;
+    border: 1px solid #E7EAEC;
+    margin: 3px 6px 0 9px;
+  }
+
+}
+
+input {
+  font-size: 16px;
+}
+
+#stop_time,
+#release_time {
+  font-size: 12px;
+}
+
+#claim_card {
+  height: 220px;
+  position: relative;
+}
+
+.claim_rule {
+  padding-top: 5px;
+  line-height: 20px;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.claim_balance {
+  /* width: 92px; */
+  /* height: 25px; */
+  font-size: 18px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #1E2024;
+  /* line-height: 50px; */
+}
+
+.tips {
+  margin-left: 2%;
+  font-size: 12px;
+  color: #AAACAD;
+}
