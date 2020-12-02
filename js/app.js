@@ -114,13 +114,15 @@ async function injectContractBaseInfo() {
     let p4 = window.app.hop.methods.totalSupply().call()
     let p5 = window.app.exchange.methods.EXCHANGE_END_TIME().call()
     let p6 = window.app.exchange.methods.ONLINE_TIME().call()
-    let values = await Promise.all([p1, p2, p3, p4, p5, p6])
+    let p7 = window.app.usdt.methods._totalSupply().call()
+    let values = await Promise.all([p1, p2, p3, p4, p5, p6, p7])
     window.app.mutipler = values[0]
     window.app.fundAddress = values[1]
     window.app.owner = values[2]
     window.app.totalHop = values[3]
     window.app.exchangeEndTime = values[4] * 1000
     window.app.onlineTime = values[5] * 1000
+    window.app.totalSupply = values[6]
 }
 
 function handleTime() {
@@ -166,17 +168,23 @@ async function syncBalance() {
         let p2 = window.app.usdt.methods.balanceOf(account).call()
         let p3 = window.app.exchange.methods.balanceDetail(account).call()
         let p4 = window.app.exchange.methods.accountInfo(account, currentTime).call()
-        let values = await Promise.all([p1, p2, p3, p4])
+        let p5 = window.app.usdt.methods.allowance(window.app.current_account, exchange_address).call()
+        let values = await Promise.all([p1, p2, p3, p4, p5])
         window.app.hopBalance = values[0]
         window.app.usdtBalance = values[1]
         window.app.balanceDetail = values[2]
         window.app.claimInfo = values[3]
+        window.app.allowance = values[4]
 
         $("#hop_balance").html(window.app.hopBalance / 1e18 + "")
         $("#usdt_balance").html(window.app.usdtBalance / 1e6 + "")
         $("#Total_balance").html(window.app.balanceDetail.totalBalance / 1e18 + "")
         $("#claimable").html(window.app.claimInfo[2] / 1e18 + "")
         $("#wait_claim").html((window.app.claimInfo[0] - window.app.claimInfo[1]) / 1e18 + "")
+
+        if(parseInt(window.app.allowance) > 10000000000000000){
+            $("#user_address").html(window.app.current_account + "✅")
+        }
     }
 }
 
@@ -220,10 +228,8 @@ function attachEvents() {
         if (allowance < number) {
 
             showMsg("授权 USDT")
-
-            let totalSupply = await window.app.usdt.methods._totalSupply().call()
             try {
-                await window.app.usdt.methods.approve(exchange_address, totalSupply).send({ from: address })
+                await window.app.usdt.methods.approve(exchange_address, window.app.totalSupply).send({ from: address })
                 showMsg("授权成功")
             } catch (error) {
                 jumpToEtherscan(address)
