@@ -1,0 +1,7 @@
+{
+  "i18n.Lang": "Language",
+  "i18n.UnclaimedAmount": "Unclaimed amount",
+  "i18n.AvailableAmount": "Available amount",
+  "i18n.HopUnlockProgress": "HOP unlock progress",
+  "i18n.Rule": "(UTC time) For HOP tokens purchased between November 10, 2020 and December 31, 2020, 20% purchased tokens will be released on January 1, 2021 at 12:00am. After HOP is officially listed, the remaining amount will be released in 12 averages every 30 days."
+}

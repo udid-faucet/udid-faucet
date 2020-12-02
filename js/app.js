@@ -1,4 +1,5 @@
 import { HOP_abi, HOP_address, USDT_abi, USDT_address, exchange_abi, exchange_address } from "./abi_address.js"
+import "./jquery.i18n.js";
 
 window.onload = async () => {
     window.app = {};
@@ -335,5 +336,29 @@ function attachEvents() {
         window.app.exchange.methods.editBalance(addr_array, val_array).send({ from: address }).then(() => {
             showMsg("data inserted")
         })
+    })
+
+    var defaultLang = "cn"
+    function languageSelect(defaultLang){
+        $("[i18n]").i18n({
+            defaultLang: defaultLang,
+            filePath: "./i18n/",
+            filePrefix: "i18n_",
+            fileSuffix: "",
+            forever: true,
+            callback: function(res) {}
+        });
+    }
+    // languageSelect(defaultLang);
+
+    $("#lang").click(() => {
+        console.log(defaultLang);
+        if (defaultLang == "cn") {
+            defaultLang = "en"
+            languageSelect(defaultLang)
+        } else {
+            defaultLang = "cn"
+            languageSelect(defaultLang)
+        }
     })
 }

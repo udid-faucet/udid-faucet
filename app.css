@@ -27,7 +27,6 @@ body {
 
 .hop_card {
   width: 75%;
-  /* height: 120px; */
   margin: 3% 0 0 10%;
   padding: 2% 0 2% 5%;
   background-color: #FFFFFF;
@@ -55,14 +54,12 @@ body {
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #AAACAD;
-  /* line-height: 37px; */
 }
 #basic_rate {
   font-size: 26px;
   font-family: Lato-Semibold, Lato;
   font-weight: 600;
   color: #1E2024;
-  /* line-height: 32px; */
   line-height: 91px;
   text-align: center;
 }
@@ -141,7 +138,6 @@ body {
 }
 #handle_btns {
   margin: 45px 0 0 36%;
-  /* justify-content: space-between; */
 }
 #exchange,
 #claim {
@@ -185,7 +181,6 @@ body {
 }
 .remaining {
   bottom: 0;
-  /* padding-left: 5%; */
   position: absolute;
 }
 #balances {
@@ -227,7 +222,6 @@ body {
   font-family: PingFangSC-Semibold, PingFang SC;
   font-weight: 600;
   line-height: 32px;
-  /* margin: 54px 0 0 -37px; */
 }
 
 #sell_record {
@@ -237,6 +231,18 @@ body {
   border-radius: 15px;
   border: 1px solid #E7EAEC;
   margin: 3px 6px 0 0;
+}
+
+#lang {
+  /* width: 80px; */
+  height: 32px;
+  margin: 0 0 0 13%;
+  padding: 0 3% 0 3%;
+  font-size: 0.6rem;
+  border-radius: 15px;
+  line-height: 30px;
+  text-align: center;
+  border: 2px solid #CACCCD;
 }
 }
 
@@ -248,7 +254,7 @@ body {
   }
   #top_basic {
       width: 100%;
-      height: 178px;
+      height: 220px;
       padding-top: 22px;
       position: relative;
       background: url('./static/iPhone/bg-png.png');
@@ -297,13 +303,11 @@ body {
       line-height: 24px;
   }
   .basic_con {
-      /* width: 120px; */
       height: 20px;
       font-size: 0.6rem;
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
       color: #AAACAD;
-      /* line-height: 20px; */
       display: flex;
   }
   #basic_rate {
@@ -317,15 +321,12 @@ body {
   }
   #line {
       width: 96%;
-      /* width: 319px; */
       height: 1px;
-      /* margin: 100px 0 0 2%; */
       margin-left: 2%;
       position: absolute;
       top: 100px;
       background: #F6F7F8;
       border-radius: 15px;
-  /* border: 1px solid #E7EAEC; */
   }
   #dot {
       width: 6px;
@@ -345,10 +346,8 @@ body {
       width: 100%;
       height: 36px;
       margin: 40px 0 0 5%;
-      /* background: #F6F7F8; */
       border-radius: 15px;
       border: 0 !important;
-  /* border: 1px solid #E7EAEC; */
   }
   #append_address,
   #append_value,
@@ -387,7 +386,6 @@ body {
   #claim,
   #exchange {
     height: 45px;
-    /* line-height: 34px; */
     margin: 6px 0 0 5%;
   }
   #claim,
@@ -410,7 +408,7 @@ body {
   .claim_rule,
   .remaining {
   width: 100%;
-  height: 20px;
+  /* height: 20px; */
   background: #F7F9F9;
   border-radius: 8px;
   font-size: 0.8px;
@@ -440,9 +438,7 @@ body {
       margin-left: 3%;
   }
   #approve_btn {
-    /* display: flex; */
     margin: 10px 0 5px 0;
-    /* justify-content: space-between; */
   }
   #update,
   #append,
@@ -474,7 +470,6 @@ body {
     font-family: PingFangSC-Semibold, PingFang SC;
     font-weight: 600;
     line-height: 28px;
-    /* margin: 40px 0 0 -30px; */
   }
   #sell_record {
     width: 90%;
@@ -483,6 +478,19 @@ body {
     border-radius: 15px;
     border: 1px solid #E7EAEC;
     margin: 3px 6px 0 9px;
+  }
+
+  #lang {
+    /* width: 55px; */
+    height: 26px;
+    margin: 0 0 0 5%;
+    padding: 0 3% 0 3%;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 0.6rem;
+    line-height: 24px;
+    border: 2px solid #CACCCD;
+    background: #FFFFFF
   }
 
 }
@@ -504,20 +512,17 @@ input {
 .claim_rule {
   padding-top: 5px;
   line-height: 20px;
-  height: 60px;
+  /* height: 80px; */
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
 .claim_balance {
-  /* width: 92px; */
-  /* height: 25px; */
   font-size: 18px;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #1E2024;
-  /* line-height: 50px; */
 }
 
 .tips {

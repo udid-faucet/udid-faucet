@@ -1,0 +1,7 @@
+{
+  "i18n.Lang": "语言",
+  "i18n.UnclaimedAmount": "未提金额",
+  "i18n.AvailableAmount": "可提金额",
+  "i18n.HopUnlockProgress": "HOP解锁进度",
+  "i18n.Rule": "(UTC时间) 2020.11.10-2020.12.31之间购买的HOP，将于2021.1.1 12:00am 释放总量的20%，剩余金额在HOP正式上线之后将以每30天为周期分12次平均发放。"
+}
