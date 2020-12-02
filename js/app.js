@@ -184,8 +184,6 @@ async function syncBalance() {
 
         if(parseInt(window.app.allowance) > 10000000000000000){
             $("#user_address").html(window.app.current_account + "✅")
-        }else{
-            $("#user_address").html(window.app.current_account + "☑️")
         }
     }
 }
