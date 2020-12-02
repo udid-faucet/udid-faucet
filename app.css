@@ -296,7 +296,7 @@ body {
       right: 16px;
       border-radius: 15px;
       border: 2px solid #CACCCD;
-      background: #FFFFFF;
+      /* background: #FFFFFF; */
   }
   .basic_title {
       height: 24px;
@@ -490,7 +490,7 @@ body {
     margin: 0 0 0 5%;
     padding: 0 6% 0 3%;
     text-align: center;
-    /* border-radius: 15px; */
+    /* border-radius: 15px !important; */
     font-size: 0.6rem;
     line-height: 24px;
     border: 2px solid #CACCCD;
@@ -527,14 +527,14 @@ input {
 }
 
 .claim_balance {
-  font-size: 18px;
+  font-size: 0.7rem;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #1E2024;
 }
 
 .tips {
-  margin-left: 2%;
-  font-size: 12px;
+  margin-left: 1%;
+  font-size: 0.4rem;
   color: #AAACAD;
 }
