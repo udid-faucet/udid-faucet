@@ -18,16 +18,20 @@
     <body>
         <h2 id="broswer_type" hidden>Exchange USDT for HOP</h2>
         <div id="top_basic">
-            <div style="display: flex;">    
+            <div style="display: flex; justify-content: space-between;">    
                 <div id="network">
                     <div id="dot"></div>
                     <div id="network_type" >Connect to Web3</div>
                 </div>
-                <div id="lang" i18n="i18n.Lang">语言</div>
+                <select id="lang">
+                    <option value ="cn">中文</option>
+                    <option value ="en">English</option>
+                </select>
+                <!-- <div id="lang" i18n="i18n.Lang">语言</div> -->
             </div>
 
             <div id="account" >
-                <div class="basic_title">Account</div>
+                <div class="basic_title" i18n="i18n.Account">账户</div>
                 <div id="user_address" class="basic_con"></div>
             </div>
             <div id="balances">
@@ -41,11 +45,11 @@
                     <div class="basic_con">
                         <div><img src="./static/HOP-logo.png" alt=""></div>  HOP</div>
                 </div>
-                <div style="margin-left: 2%;">
-                    <div class="basic_title" id="Total_balance"></div>
-                    <div class="basic_con">
-                        <div><img src="./static/HOP-logo.png" alt=""></div>  Subscription</div>
-                </div>
+                
+            </div>
+            <div id="subscription">
+                <div class="basic_title" i18n="i18n.Subscription">认购金额: </div>
+                <div class="basic_title" id="Total_balance"></div>
             </div>
         </div>
 
@@ -113,7 +117,7 @@
             <div style="display: flex; justify-content: space-between; width: 90%;">
                 <div class="tips" style="width: 25%;" i18n="i18n.HopUnlockProgress">HOP解锁进度:</div>
                 <div class="tips" style="width: 20%; text-align: center;" id="progress_hop"></div>
-                <div class="tips" style="margin: 0;" id="next_release"></div>
+                <div class="tips" style="margin: 0; display: flex;"><div i18n="i18n.NextRelease">下次释放HOP时间:</div><div id="next_release"></div></div>
             </div>
             
             <div class="claim_rule">

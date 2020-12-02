@@ -87,7 +87,7 @@ async function start() {
     window.app.times = times
     for (var i in times) {
         if (now < times[i])
-            $("#next_release").html("下次释放HOP时间" + formatDate(new Date(times[i])))
+            $("#next_release").html(formatDate(new Date(times[i])))
         break;
     }
 
@@ -345,26 +345,23 @@ function attachEvents() {
     })
 
     var defaultLang = "cn"
-    function languageSelect(defaultLang){
-        $("[i18n]").i18n({
-            defaultLang: defaultLang,
-            filePath: "./i18n/",
-            filePrefix: "i18n_",
-            fileSuffix: "",
-            forever: true,
-            callback: function(res) {}
-        });
-    }
-    // languageSelect(defaultLang);
 
-    $("#lang").click(() => {
-        console.log(defaultLang);
-        if (defaultLang == "cn") {
-            defaultLang = "en"
-            languageSelect(defaultLang)
-        } else {
-            defaultLang = "cn"
-            languageSelect(defaultLang)
-        }
+    // languageSelect(defaultLang);
+    var lang = $("#lang")
+    lang.change(() => {
+        defaultLang = lang.val()
+        languageSelect(defaultLang)
     })
+
+}
+
+function languageSelect(defaultLang){
+    $("[i18n]").i18n({
+        defaultLang: defaultLang,
+        filePath: "./i18n/",
+        filePrefix: "i18n_",
+        fileSuffix: "",
+        forever: true,
+        callback: function(res) {}
+    });
 }
