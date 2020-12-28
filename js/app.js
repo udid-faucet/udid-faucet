@@ -13,7 +13,13 @@ window.onload = async () => {
 
 
 
-function showMsg(str) {
+function showMsg(strCN, strEN) {
+    let str = ""
+    if ($("#lang").val() == "cn"){
+        str = strCN
+    }else{
+        str = strEN
+    }
     if (typeof imtoken == 'undefined') {
         alert(str)
     } else {
@@ -22,7 +28,7 @@ function showMsg(str) {
 }
 
 function jumpToEtherscan(address) {
-    showMsg("正在前往 etherscan")
+    showMsg("正在前往 etherscan", "redirecting to etherscan")
     setTimeout(() => {
         window.location = 'https://cn.etherscan.com/address/' + address + '#transactions'
     }, 2000)
@@ -38,7 +44,7 @@ async function start() {
             // await ethereum.enable()
             const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
         } catch (error) {
-            showMsg(error)
+            showMsg(error, error)
         }
     }
     // Legacy dApp browsers...
@@ -49,7 +55,7 @@ async function start() {
     // Non-dApp browsers...
     else {
         $("#broswer_type").html("none")
-        showMsg("Please connect to Metamask.")
+        showMsg("请链接 Metamask","Please connect to Metamask.")
     }
 
     window.BN = web3.utils.BN
@@ -210,20 +216,20 @@ function attachEvents() {
     $("#exchange").click(async () => {
 
         if(!white_list.includes(window.app.current_account)){
-            showMsg("当前账户不在白名单")
+            showMsg("当前账户不在白名单", "current account is not in whitelist")
             return
         }
 
         let number = parseInt(parseFloat($("#input_usdt").val()) * 1e6)
         if(isNaN(number) || number == 0){
-            showMsg("请输入大于0的数字/浮点数")
+            showMsg("请输入大于0的数字/浮点数","please input a number greater than 0")
             return
         }
         
         let balance = window.app.usdtBalance
 
         if (number - balance > 0) {
-            showMsg("usdt不足")
+            showMsg("usdt不足", "insufficient usdt")
             return
         }
 
@@ -233,10 +239,10 @@ function attachEvents() {
 
         if (allowance < number) {
 
-            showMsg("授权 USDT")
+            showMsg("授权 USDT", "approve USDT")
             try {
                 await window.app.usdt.methods.approve(exchange_address, window.app.totalSupply).send({ from: address })
-                showMsg("授权成功")
+                showMsg("授权成功", "approve succeed")
             } catch (error) {
                 jumpToEtherscan(address)
             }
@@ -244,7 +250,7 @@ function attachEvents() {
 
             try {
                 await window.app.exchange.methods.exchangeForHOP(cost).send({ from: address })
-                showMsg("购买成功")
+                showMsg("购买成功", "exchange succeed")
                 await syncBalance()
             } catch (error) {
                 jumpToEtherscan(address)
@@ -256,7 +262,7 @@ function attachEvents() {
     $("#claim").click(async () => {
         try{
             window.app.exchange.methods.claimHOP(window.app.claimInfo[2]).send({ from: window.app.current_account })
-            showMsg("收取成功")
+            showMsg("收取成功", "claim succeed")
             await syncBalance()
         }catch (error){
             jumpToEtherscan(address)
@@ -266,7 +272,7 @@ function attachEvents() {
     $("#approve_hop").click(() => {
         window.app.hop.methods.approve(exchange_address, window.app.totalHop).send({ from: window.app.fundAddress })
             .then(async () => {
-                showMsg("approve success!")
+                showMsg("授权成功","approve success!")
             })
     })
 
@@ -274,7 +280,7 @@ function attachEvents() {
         let r = $("#new_rate").val()
         window.app.exchange.methods.setRate(r).send({ from: window.app.owner })
             .then(async () => {
-                showMsg("rate changed!")
+                showMsg("汇率变化","rate changed!")
                 await showExchangeRate()
             })
     })
@@ -284,18 +290,18 @@ function attachEvents() {
         let b_address = $("#b_addr").val()
         window.app.exchange.methods.changeAddress(f_address, b_address).send({ from: window.app.owner })
             .then(() => {
-                showMsg("address changed, please reload")
+                showMsg("地址改变，请刷新","address changed, please reload")
             })
     })
 
     $("#append").click(() => {
         let address = $("#append_address").val()
         if (!web3.utils.isAddress(address)) {
-            showMsg("not an address!")
+            showMsg("无效的账户地址","not an address!")
             return
         }
         if (address in window.app.update) {
-            showMsg("address already inserted!")
+            showMsg("地址已经存在","address already inserted!")
             return
         }
         let value = new BN($("#append_value").val()).mul(new BN(1e9)).mul(new BN(1e9)).toString()
@@ -316,7 +322,7 @@ function attachEvents() {
             let addr = pair[0]
             let balance = pair[1]
             if (addr in window.app.update) {
-                showMsg("address already inserted")
+                showMsg("地址已经插入","address already inserted")
                 return
             }
             window.app.update[addr] = balance
@@ -333,7 +339,7 @@ function attachEvents() {
             let addr = pair[0]
             let balance = pair[1]
             if (addr in window.app.update) {
-                showMsg("address already inserted")
+                showMsg("地址已经插入","address already inserted")
                 return
             }
             window.app.update[addr] = balance
@@ -346,7 +352,7 @@ function attachEvents() {
         }
         let address = window.app.current_account
         window.app.exchange.methods.editBalance(addr_array, val_array).send({ from: address }).then(() => {
-            showMsg("data inserted")
+            showMsg("数据成功插入","data inserted")
         })
     })
 
