@@ -1,5 +1,6 @@
 import { HOP_abi, HOP_address, USDT_abi, USDT_address, exchange_abi, exchange_address } from "./abi_address.js"
 import "./jquery.i18n.js";
+import {white_list} from "./white_list.js"
 
 window.onload = async () => {
     window.app = {};
@@ -207,6 +208,11 @@ function attachEvents() {
     })
 
     $("#exchange").click(async () => {
+
+        if(!white_list.includes(window.app.current_account)){
+            showMsg("当前账户不在白名单")
+            return
+        }
 
         let number = parseInt(parseFloat($("#input_usdt").val()) * 1e6)
         if(isNaN(number) || number == 0){
