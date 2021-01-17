@@ -109,7 +109,6 @@ async function start() {
     //init
     await syncBalance()
     showExchangeRate()
-    handleTime()
     attachEvents()
 
 }
@@ -119,42 +118,31 @@ async function injectContractBaseInfo() {
     let p2 = window.app.exchange.methods.HOP_FUND().call()
     let p3 = window.app.exchange.methods.owner().call()
     let p4 = window.app.hop.methods.totalSupply().call()
-    let p5 = window.app.exchange.methods.EXCHANGE_END_TIME().call()
-    let p6 = window.app.exchange.methods.ONLINE_TIME().call()
+    let p5 = window.app.exchange.methods.ON_EXCHANGE_TIME().call()
+    let p6 = window.app.exchange.methods.ON_EXCHANGE().call()
     let p7 = window.app.usdt.methods._totalSupply().call()
     let values = await Promise.all([p1, p2, p3, p4, p5, p6, p7])
     window.app.mutipler = values[0]
     window.app.fundAddress = values[1]
     window.app.owner = values[2]
     window.app.totalHop = values[3]
-    window.app.exchangeEndTime = values[4] * 1000
-    window.app.onlineTime = values[5] * 1000
+    window.app.onExchangeTime = values[4] * 1000
+    window.app.onExchange = values[5]
     window.app.totalSupply = values[6]
 }
 
-function handleTime() {
-    const st = new Date(window.app.exchangeEndTime)
-    const rt = new Date(window.app.onlineTime);
-    let stop_time = formatDate(st)
-    let release_time = formatDate(rt)
-    $("#stop_time").html(stop_time)
-    $("#release_time").html(release_time)
-}
 
 function getProgress(current) {
     let day = 24 * 60 * 60 * 1000
-    if (current < window.app.exchangeEndTime + day / 2) {
+    if(!window.app.onExchange){
         return 0
     }
-    if (current < window.app.onlineTime) {
-        return 20
-    }
-    let period = (current - window.app.onlineTime) / (30 * day) + 1
-    if (period >= 12) {
+    let period = (current - window.app.onExchangeTime) / (30 * day) + 1
+    if (period >= 6) {
         return 100
     }
     let p = Math.floor(period)
-    return 20 + p * (80 / 12)
+    return p / 6 * 100
 }
 
 function formatDate(now) {
@@ -353,6 +341,13 @@ function attachEvents() {
         let address = window.app.current_account
         window.app.exchange.methods.editBalance(addr_array, val_array).send({ from: address }).then(() => {
             showMsg("数据成功插入","data inserted")
+        })
+    })
+
+    $("#on_exchange_btn").click(()=>{
+        let address = window.app.current_account
+        window.app.exchange.methods.onExchange().send({from:address }).then(()=>{
+            showMsg("声明上交易所", "token is on exchange")
         })
     })
 

@@ -48,7 +48,7 @@
                 
             </div>
             <div id="subscription">
-                <div class="basic_title" i18n="i18n.Subscription">认购金额: </div>
+                <div class="basic_title" i18n="i18n.Subscription">锁仓总额: </div>
                 <div class="basic_title" id="Total_balance"></div>
             </div>
         </div>
@@ -117,14 +117,13 @@
             <div style="display: flex; justify-content: space-between; width: 95%;">
                 <div class="tips" style="width: 25%;" i18n="i18n.HopUnlockProgress">HOP解锁进度:</div>
                 <div class="tips" style="width: 8%; text-align: center;" id="progress_hop"></div>
-                <div class="tips" style="margin: 0; display: flex;"><div i18n="i18n.NextRelease">下次释放HOP时间:</div><div id="next_release"></div></div>
+                <!-- <div class="tips" style="margin: 0; display: flex;"><div i18n="i18n.NextRelease">下次释放HOP时间:</div><div id="next_release"></div></div> -->
             </div>
             
-            <div class="claim_rule">
+            <!-- <div class="claim_rule">
                 <div class="tips" i18n="i18n.Rule">
-                   (UTC时间) 2020.11.10-2020.12.31之间购买的HOP，将于2021.1.1 12:00am 释放总量的20%，剩余金额在HOP正式上线之后将以每30天为周期分12次平均发放。
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="hop_card" id="hop_woner" hidden>
@@ -139,6 +138,10 @@
         <div class="hop_card" id="contract_owner" hidden>
             <div class="basic_title">Owner:</div>
             <a id="owner_addr" class="basic_con"></a>
+            <div>
+                <div class="basic_con">Claim Now Is Exchange On Time:</div>
+                <button id="on_exchange_btn">Exchange On</button>
+            </div>
             <div class="input_line">
                 <input id="new_rate" type="number" placeholder=" set rate(number of hop per 1000000 usdt)" />
                 <button id="set_rate">set</button>
