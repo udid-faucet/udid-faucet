@@ -83,13 +83,32 @@ body {
   color: #1E2024;
   line-height: 32px;
 }
-#input_usdt {
+#input_usdt,
+#claim_number,
+#deposite_number {
   height: 42px;
 }
+
+#deposite_number {
+  width: 50%;
+  background: #F6F7F8;
+  border-radius: 15px;
+  border: 1px solid #E7EAEC; 
+}
+
+#claim_number{
+  background: #F6F7F8;
+  border-radius: 15px;
+  border: 1px solid #E7EAEC;
+}
+
 #append_value,
 #append_address,
 #input_usdt,
 #new_rate,
+#release_amount,
+#rate_for_who,
+#release_for_who,
 #f_addr,
 #b_addr {
   width: 70%;
@@ -100,13 +119,22 @@ body {
 #append_value,
 #append_address,
 #new_rate,
+#release_amount,
+#release_amount,
+#rate_for_who,
+#release_for_who,
 #f_addr,
 #b_addr {
   margin: 3px 6px 0 0;
   height: 30px;
 }
-#new_rate {
-  width: 61%;
+#new_rate,
+#release_amount {
+  width: 30%;
+}
+#rate_for_who,
+#release_for_who{
+  width:30%
 }
 #append_value,
 #append_address,
@@ -149,8 +177,10 @@ body {
 #claim,
 #exchange,
 #approve_hop,
+#deposite_hop,
 #on_exchange_btn,
 #set_rate,
+#release_btn,
 #append,
 #change_address {
   width: 44%;
@@ -162,7 +192,8 @@ body {
   color: #FFFFFF;
   border-width: 0px !important;
 }
-#approve_hop {
+#approve_hop,
+#deposite_hop {
   height: 37px;
   line-height: 20px;
   margin: 2px 0 0 10px;
@@ -347,9 +378,16 @@ body {
       color: #1E2024;
       line-height: 24px;
   }
+
+  #deposite_number {
+    width: 50%;
+    margin: 40px 0 0 5%;
+    border-radius: 15px;
+    border: 0 !important;
+}
+
   #input_usdt {
       width: 100%;
-      height: 36px;
       margin: 40px 0 0 5%;
       border-radius: 15px;
       border: 0 !important;
@@ -357,6 +395,9 @@ body {
   #append_address,
   #append_value,
   #new_rate,
+  #release_amount,
+  #rate_for_who,
+  #release_for_who,
   #f_addr,
   #b_addr {
     width: 90%;
@@ -395,7 +436,8 @@ body {
   }
   #claim,
   #exchange,
-  #approve_hop {
+  #approve_hop,
+  #deposite_hop {
     width: 90%;
     background: #F28552;
     border-radius: 15px;
@@ -406,7 +448,8 @@ body {
     line-height: 23px;
     border-width: 0px !important;
   }
-  #approve_hop {
+  #approve_hop,
+  #deposite_hop {
     height: 25px;
     margin: 6px 0 0 2%;
   }
@@ -442,12 +485,13 @@ body {
   #change_hop {
       margin-left: 3%;
   }
-  #approve_btn {
+  #approve_btn{
     margin: 10px 0 5px 0;
   }
   #update,
   #append,
   #set_rate,
+  #release_btn,
   #change_address {
     width: 90%;
     height: 42px;
@@ -514,7 +558,7 @@ input {
 }
 
 #claim_card {
-  height: 265px;
+  height: 180px;
   position: relative;
 }
 

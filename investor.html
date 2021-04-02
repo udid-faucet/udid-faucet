@@ -12,7 +12,7 @@
         <script src="./js/jquery.mini.js"></script>
         <script src="./js/jquery.i18n.js"></script>
         <script src="./js/web3.min.js"></script>
-        <script type="module" src ="./js/app.js"></script>
+        <script type="module" src ="./js/app_investor.js"></script>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     </head>
     <body>
@@ -31,7 +31,7 @@
             </div>
 
             <div id="account" >
-                <div class="basic_title" i18n="i18n.Account">账户</div>
+                <div class="basic_title" i18n="i18n.Account">投资账户</div>
                 <div id="user_address" class="basic_con"></div>
             </div>
             <div id="balances">
@@ -47,15 +47,11 @@
                 </div>
                 
             </div>
-            <div id="subscription">
-                <div class="basic_title" i18n="i18n.Subscription">锁仓总额: </div>
-                <div class="basic_title" id="Total_balance"></div>
-            </div>
         </div>
 
         <div class="center_card">
             <div id="basic_rate">
-                1 USDT = <a id="rate">?</a> HOP
+                <p>1 USDT = <span id="rate">?</span> HOP  <span style="margin-left:60px">(HOP in Contract: Locked/Deposite = <span id="lock_deposite">?/?</span>)</span> </p>
             </div>
 
             <div id="line"></div>
@@ -105,46 +101,34 @@
                     
                 </div>
                 <div style="margin: 40px 3% 0 0;">
+                    <input id="claim_number" type="number" placeholder="  hop" /> 
                     <button id="claim_btn">Claim</button>
                 </div>  
             </div>
-
-            <div class="weui-progress" style="margin-right: 5%; margin-top: 20px;">
-                <div class="weui-progress__bar">
-                  <div class="weui-progress__inner-bar js_progress" id="progress" style=" background-color: #F28552"></div>
-                </div>
-            </div>
-            <div style="display: flex; justify-content: space-between; width: 95%;">
-                <div class="tips" style="width: 25%;" i18n="i18n.HopUnlockProgress">HOP解锁进度:</div>
-                <div class="tips" style="width: 8%; text-align: center;" id="progress_hop"></div>
-                <!-- <div class="tips" style="margin: 0; display: flex;"><div i18n="i18n.NextRelease">下次释放HOP时间:</div><div id="next_release"></div></div> -->
-            </div>
-            
-            <!-- <div class="claim_rule">
-                <div class="tips" i18n="i18n.Rule">
-                </div>
-            </div> -->
         </div>
 
         <div class="hop_card" id="hop_funder" hidden>
             <div class="basic_title">HOP fund:</div>
             <a id="fund_addr" class="basic_con"></a>
-            <div id="approve_btn">
-                <div class="basic_con">Approve HOP for exchange:</div>
-                <button id="approve_hop">approve</button>
+            <div id="deposite_btn">
+                <div class="basic_con">Deposite HOP for exchange:</div>
+                <input id="deposite_number" type="number" placeholder="  hop" />
+                <button id="deposite_hop">deposite</button>
             </div>
         </div>
 
         <div class="hop_card" id="contract_owner" hidden>
             <div class="basic_title">Owner:</div>
             <a id="owner_addr" class="basic_con"></a>
-            <div>
-                <div class="basic_con">Claim Now Is Exchange On Time:</div>
-                <button id="on_exchange_btn">Exchange On</button>
-            </div>
             <div class="input_line">
                 <input id="new_rate" type="number" placeholder=" set rate(number of hop per 1000000 usdt)" />
+                <input id="rate_for_who" placeholder=" investor address"/>
                 <button id="set_rate">set</button>
+            </div>
+            <div class="input_line">
+                <input id="release_amount" type="number" placeholder=" set released hop number" />
+                <input id="release_for_who" placeholder=" investor address"/>
+                <button id="release_btn">release</button>
             </div>
             <div class="basic_title" style="margin-top: 10px;">Change Address:</div>
             <div class="input_line">
