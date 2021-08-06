@@ -77,3 +77,6 @@ export async function detectBroswer(){
         showMsg("请链接 Metamask","Please connect to Metamask.")
     }
 }
+
+export const firstLimit = 200000
+export const commonLimit = 50000

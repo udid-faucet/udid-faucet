@@ -10,7 +10,7 @@ export let investor_abi = [{"inputs":[{"internalType":"address","name":"HOPAddr"
 // export let exchange_address = "0x0176a72A5ADE24De162eacAb6a56E31A8bb797A3"
 // export let investor_address = "0xDaC511E4eF3Ead99f90716e246282662A3e36732"
 
-// //main net
+//main net
 export let HOP_address = "0x1999ac2b141E6d5c4e27579b30f842078bc620b3"
 export let USDT_address = "0xdAC17F958D2ee523a2206206994597C13D831ec7"
 // export let exchange_address_old = "0xd76e97871c04b0f481acd75c1a1525dec31eefb9"

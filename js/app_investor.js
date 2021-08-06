@@ -54,7 +54,6 @@ async function start() {
     await syncBalance()
     showExchangeRate()
     attachEvents()
-
 }
 
 function interceptNormalUser() {
