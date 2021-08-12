@@ -297,7 +297,7 @@ function attachEvents() {
     })
 
 
-    var defaultLang = "cn"
+    var defaultLang = "en"
 
     // languageSelect(defaultLang);
     var lang = $("#lang")
