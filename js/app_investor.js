@@ -16,7 +16,7 @@ window.onload = async () => {
 async function start() {
 
     detectBroswer()
-
+    languageSelect("en")
     window.BN = web3.utils.BN
     let accounts = await web3.eth.getAccounts();
     $("#user_address").html(accounts[0]);

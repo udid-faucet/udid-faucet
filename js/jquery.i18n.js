@@ -1,7 +1,7 @@
 (function($) {
     $.fn.extend({
         i18n: function(options) {
-            var defaultLang = "cn"
+            var defaultLang = "en"
             var defaults = {
                 lang: "",
                 defaultLang: defaultLang,
