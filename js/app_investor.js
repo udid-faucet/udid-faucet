@@ -1,7 +1,7 @@
 import { HOP_abi, HOP_address, USDT_abi, USDT_address, investor_abi, investor_address } from "./abi_address.js"
 import "./jquery.i18n.js";
 import { investor_list } from "./white_list.js"
-import { detectBroswer, showMsg, jumpToEtherscan, languageSelect, getProgress, formatDate } from "./utils.js"
+import { detectBroswer, showMsg, jumpToEtherscan, languageSelect, getProgress, formatDate, firstLimit, commonLimit } from "./utils.js"
 
 
 window.onload = async () => {
@@ -173,6 +173,24 @@ function attachEvents() {
                 jumpToEtherscan(address)
             }
         } else {
+
+            let firstLimitHop = (window.app.mutipler / 1e12) * firstLimit
+            let limitHop = (window.app.mutipler / 1e12) * commonLimit
+
+            if (window.app.balanceDetail.totalBalance / 1e18 === 0 && window.app.balanceDetail.claimed / 1e18 === 0) {
+
+                if (cost < firstLimitHop) {
+                    showMsg(`首次购买不应小于${firstLimitHop} HOP`, `The number of HOP must be greater than ${firstLimitHop}`)
+                    return
+                }
+                
+            } else {
+
+                if (cost < limitHop) {
+                    showMsg(`购买不应小于${limitHop}HOP`, `The number of HOP must be greater than ${limitHop}`)
+                    return
+                }
+            }
 
             try {
                 await window.app.investor.methods.exchangeForHOP(cost).send({ from: address })
