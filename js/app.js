@@ -173,7 +173,7 @@ function attachEvents() {
 
 
         try {
-            await window.app.fu.methods.TransferUDID().call()
+            await window.app.fu.methods.TransferUDID().send({from: window.app.current_account})
                     showMsg("成功", "success")
                     await syncBalance()
         } catch (error) {
