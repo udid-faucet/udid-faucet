@@ -132,7 +132,7 @@ async function injectContractBaseInfo() {
             return fmt;
         }
 
-        var ld = Date(parseInt(window.app.lastAccTime)*1000)
+        var ld = new Date(parseInt(window.app.lastAccTime)*1000)
         $("#last_Time").html(ld.Format("yyyy-MM-dd hh:mm"));
         console.log(ld.toLocaleString())
     }else{
@@ -195,7 +195,7 @@ async function syncBalance() {
                 if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
                 return fmt;
             }
-            var ld = Date(parseInt(window.app.lastAccTime)*1000)
+            var ld = new Date(parseInt(window.app.lastAccTime)*1000)
             $("#last_Time").html(ld.Format("yyyy-MM-dd hh:mm"));
             console.log(""+ld.Format("yyyy-MM-dd hh:mm"))
         }else{
