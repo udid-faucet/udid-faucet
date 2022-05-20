@@ -103,8 +103,9 @@ async function injectContractBaseInfo() {
     console.log("---->",window.app.lastAccTime)
 
     $("#user_address").html(window.app.current_account + "✅")
+    console.log("balance",window.app.udidBalance)
     $("udid_balance").html(window.app.udidBalance)
-
+    console.log("lasttime",window.app.lastAccTime)
     if (parseInt(window.app.lastAccTime) > 0){
         var ld = Date(parseInt(window.app.lastAccTime)*1000)
         $("last_Time").html(ld.toLocaleString());
@@ -145,7 +146,11 @@ async function syncBalance() {
 
         
         $("#user_address").html(window.app.current_account + "✅")
+        // $("udid_balance").html(window.app.udidBalance)
+        console.log("balance",window.app.udidBalance)
         $("udid_balance").html(window.app.udidBalance)
+        console.log("lasttime",window.app.lastAccTime)
+
         if (parseInt(window.app.lastAccTime) > 0){
             var ld = Date(parseInt(window.app.lastAccTime)*1000)
             $("last_Time").html(ld.toLocaleString());
