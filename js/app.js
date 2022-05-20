@@ -108,10 +108,10 @@ async function injectContractBaseInfo() {
     console.log("lasttime",window.app.lastAccTime)
     if (parseInt(window.app.lastAccTime) > 0){
         var ld = Date(parseInt(window.app.lastAccTime)*1000)
-        $("#last_Time").html(ld.toLocaleString());
+        // $("#last_Time").html(ld.toLocaleString());
         console.log(ld.toLocaleString())
     }else{
-        $("#last_Time").html("you haven't get free udid");
+        // $("#last_Time").html("you haven't get free udid");
     }
 
 }
@@ -148,15 +148,15 @@ async function syncBalance() {
         $("#user_address").html(window.app.current_account + "✅")
         // $("udid_balance").html(window.app.udidBalance)
         console.log("balance",window.app.udidBalance)
-        $("#udid_balance").html(""+String(window.app.udidBalance))
+        $("#udid_balance").html(String(window.app.udidBalance))
         console.log("lasttime",window.app.lastAccTime)
 
         if (parseInt(window.app.lastAccTime) > 0){
             var ld = Date(parseInt(window.app.lastAccTime)*1000)
-            $("#last_Time").html(ld.toLocaleString());
+            // $("#last_Time").html(ld.toLocaleString());
             console.log(""+ld.toLocaleString())
         }else{
-            $("#last_Time").html("you haven't get free udid");
+            // $("#last_Time").html("you haven't get free udid");
         }
        
     
