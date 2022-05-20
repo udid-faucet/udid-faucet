@@ -13,9 +13,9 @@ export function showMsg(strCN, strEN) {
 }
 
 export function jumpToEtherscan(address) {
-    showMsg("正在前往 etherscan", "redirecting to etherscan")
+    showMsg("正在前往 ropsten etherscan", "redirecting to etherscan")
     setTimeout(() => {
-        window.location = 'https://cn.etherscan.com/address/' + address + '#transactions'
+        window.location = 'https://https://ropsten.etherscan.io/address/' + address + '#transactions'
     }, 2000)
 }
 
