@@ -16,7 +16,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     </head>
     <body>
-        <h2 id="broswer_type" hidden>Exchange USDT for HOP</h2>
+        <!-- <h2 id="broswer_type" hidden>Exchange USDT for HOP</h2> -->
         <div id="top_basic">
             <div style="display: flex; justify-content: space-between;">    
                 <div id="network">
@@ -36,21 +36,25 @@
             </div>
             <div id="balances">
                 <div>
-                    <div class="basic_title" id="usdt_balance"></div>
+                    <div class="basic_title" id="udid_balance"></div>
                     <div class="basic_con">
-                        <div><img src="./static/usdt-logo.png" alt=""></div>  USDT</div>
+                        <div><img src="./static/udid-logo.png" alt=""></div>  USDT</div>
                 </div>
-                <div style="margin-left: 2%;">
+                <!-- <div style="margin-left: 2%;">
                     <div class="basic_title" id="hop_balance"></div>
                     <div class="basic_con">
                         <div><img src="./static/HOP-logo.png" alt=""></div>  HOP</div>
-                </div>
+                </div> -->
                 
             </div>
-            <div id="subscription">
+            <div id="lastTime" >
+                <div class="basic_title" i18n="i18n.Account">时间</div>
+                <div id="last_Time" class="basic_con"></div>
+            </div>
+            <!-- <div id="subscription">
                 <div class="basic_title" i18n="i18n.Subscription">锁仓总额: </div>
                 <div class="basic_title" id="Total_balance"></div>
-            </div>
+            </div> -->
         </div>
 
         <div class="center_card">
@@ -60,10 +64,10 @@
 
             <div id="line"></div>
 
-            <div id="change">
+            <!-- <div id="change">
                 <div id="change_usdt">
                     <div id="change_usdt_input">
-                        <input id="input_usdt" type="number" placeholder="  USDT" />
+                        <input id="input_usdt" type="number" placeholder="  UDID" />
                     </div>
                     <button id="all">all</button>
                 </div>
@@ -73,9 +77,9 @@
                     </div>
                     <div id="basic_hop"><a id="hop_amount">0</a> HOP</div>
                 </div>
-            </div>
+            </div> -->
             <div id="handle_btns">
-                <button id="exchange">Exchange!</button>
+                <button id="exchange">Get Test UDID!</button>
                 <!-- <button id="exchange">Exchange!<br/><span style="font-size: 12px;">Before: </span><span id="stop_time"></span></button> -->
                 <!-- <button id="claim">Claim!<br/><span style="font-size: 12px;">After: </span><span id="release_time"></span></button> -->
             </div>
@@ -85,7 +89,7 @@
         </div>
 
         <div class="hop_card" id="claim_card">
-            <div style="display: flex; justify-content: space-between;">
+            <!-- <div style="display: flex; justify-content: space-between;">
                 <div>
                     <div class="claim_balance" i18n="i18n.UnclaimedAmount">未提金额</div>
                     <div class="basic_title" id="wait_claim"></div>
@@ -107,9 +111,9 @@
                 <div style="margin: 40px 3% 0 0;">
                     <button id="claim_btn">Claim</button>
                 </div>  
-            </div>
+            </div> -->
 
-            <div class="weui-progress" style="margin-right: 5%; margin-top: 20px;">
+            <!-- <div class="weui-progress" style="margin-right: 5%; margin-top: 20px;">
                 <div class="weui-progress__bar">
                   <div class="weui-progress__inner-bar js_progress" id="progress" style=" background-color: #F28552"></div>
                 </div>
@@ -117,8 +121,8 @@
             <div style="display: flex; justify-content: space-between; width: 95%;">
                 <div class="tips" style="width: 25%;" i18n="i18n.HopUnlockProgress">HOP解锁进度:</div>
                 <div class="tips" style="width: 8%; text-align: center;" id="progress_hop"></div>
-                <!-- <div class="tips" style="margin: 0; display: flex;"><div i18n="i18n.NextRelease">下次释放HOP时间:</div><div id="next_release"></div></div> -->
-            </div>
+                <div class="tips" style="margin: 0; display: flex;"><div i18n="i18n.NextRelease">下次释放HOP时间:</div><div id="next_release"></div></div>
+            </div> -->
             
             <!-- <div class="claim_rule">
                 <div class="tips" i18n="i18n.Rule">
@@ -126,16 +130,16 @@
             </div> -->
         </div>
 
-        <div class="hop_card" id="hop_funder" hidden>
+        <!-- <div class="hop_card" id="hop_funder" hidden>
             <div class="basic_title">HOP fund:</div>
             <a id="fund_addr" class="basic_con"></a>
             <div id="approve_btn">
                 <div class="basic_con">Approve HOP for exchange:</div>
                 <button id="approve_hop">approve</button>
             </div>
-        </div>
+        </div> -->
 
-        <div class="hop_card" id="contract_owner" hidden>
+        <!-- <div class="hop_card" id="contract_owner" hidden>
             <div class="basic_title">Owner:</div>
             <a id="owner_addr" class="basic_con"></a>
             <div>
@@ -166,7 +170,7 @@
                 <button id="update">update</button>
             </div>
             
-        </div>
+        </div> -->
     </body>
 
     <style>

@@ -31,18 +31,18 @@ export function languageSelect(defaultLang){
 }
 
 
-export function getProgress(current) {
-    let day = 24 * 60 * 60 * 1000
-    if(!window.app.onExchange){
-        return 0
-    }
-    let period = (current - window.app.onExchangeTime) / (30 * day) + 1
-    if (period >= 6) {
-        return 100
-    }
-    let p = Math.floor(period)
-    return p / 6 * 100
-}
+// export function getProgress(current) {
+//     let day = 24 * 60 * 60 * 1000
+//     if(!window.app.onExchange){
+//         return 0
+//     }
+//     let period = (current - window.app.onExchangeTime) / (30 * day) + 1
+//     if (period >= 6) {
+//         return 100
+//     }
+//     let p = Math.floor(period)
+//     return p / 6 * 100
+// }
 
 export function formatDate(now) {
     var year = now.getFullYear();
