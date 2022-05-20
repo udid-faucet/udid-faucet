@@ -108,6 +108,7 @@ async function injectContractBaseInfo() {
     if (parseInt(window.app.lastAccTime) > 0){
         var ld = Date(parseInt(window.app.lastAccTime)*1000)
         $("last_Time").html(ld.toLocaleString());
+        console.log(ld.toLocaleString())
     }else{
         $("last_Time").html("you haven't get free udid");
     }
@@ -148,6 +149,7 @@ async function syncBalance() {
         if (parseInt(window.app.lastAccTime) > 0){
             var ld = Date(parseInt(window.app.lastAccTime)*1000)
             $("last_Time").html(ld.toLocaleString());
+            console.log(ld.toLocaleString())
         }else{
             $("last_Time").html("you haven't get free udid");
         }
