@@ -100,12 +100,14 @@ async function injectContractBaseInfo() {
     window.app.lastAccTime = values[0]
     window.app.udidBalance = values[1]
 
+    console.log("---->",window.app.lastAccTime)
+
     $("#user_address").html(window.app.current_account + "✅")
     $("udid_balance").html(window.app.udidBalance)
 
     if (window.app.lastAccTime > 0){
-        var ld = new Date(window.app.lastAccTime)
-        $("last_Time").html(ld);
+        var ld = Date(parseInt(window.app.lastAccTime)*1000)
+        $("last_Time").html(ld.toLocaleString());
     }else{
         $("last_Time").html("you haven't get free udid");
     }
@@ -144,8 +146,8 @@ async function syncBalance() {
         $("#user_address").html(window.app.current_account + "✅")
         $("udid_balance").html(window.app.udidBalance)
         if (window.app.lastAccTime > 0){
-            var ld = new Date(window.app.lastAccTime)
-            $("last_Time").html(ld);
+            var ld = Date(parseInt(window.app.lastAccTime)*1000)
+            $("last_Time").html(ld.toLocaleString());
         }else{
             $("last_Time").html("you haven't get free udid");
         }
