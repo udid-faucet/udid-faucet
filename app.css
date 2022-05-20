@@ -224,6 +224,10 @@ body {
   margin-left: 18%;
   margin-top: 42px;
 }
+#lastTime {
+  margin-left: 18%;
+  margin-top: 42px;
+}
 #change, #change_hop, #approve_btn {
   display: flex;
 }
@@ -473,6 +477,10 @@ body {
       margin-left: 5%;
       margin-top: 14px;
   }
+  #lastTime {
+    margin-left: 5%;
+    margin-top: 14px;
+}
   #balances {
       display: flex;
       margin-top: 22px;
