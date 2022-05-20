@@ -196,7 +196,7 @@ async function syncBalance() {
                 return fmt;
             }
             var ld = Date(parseInt(window.app.lastAccTime)*1000)
-            $("#last_Time").html(ld.toLocaleString());
+            $("#last_Time").html(ld.Format("yyyy-MM-dd hh:mm"));
             console.log(""+ld.Format("yyyy-MM-dd hh:mm"))
         }else{
             $("#last_Time").html("you haven't get free udid");
