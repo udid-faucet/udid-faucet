@@ -93,7 +93,7 @@ async function injectContractBaseInfo() {
     // window.app.udid.methods.balance
     
 
-    let p1 = window.app.fu.methods.LastTime().call()
+    let p1 = window.app.fu.methods.LastTime().call({from:window.app.current_account})
     let p2 = window.app.udid.methods.balanceOf(window.app.current_account).call()
 
     let values = await Promise.all([p1,p2])
@@ -106,6 +106,8 @@ async function injectContractBaseInfo() {
     if (window.app.lastAccTime > 0){
         var ld = new Date(window.app.lastAccTime)
         $("last_Time").html(ld);
+    }else{
+        $("last_Time").html("you haven't get free udid");
     }
 
 }
@@ -117,7 +119,7 @@ async function syncBalance() {
     {
         // let currentTime = Math.floor(Date.now() / 1000)
         let account = window.app.current_account
-        let p1 = window.app.fu.methods.LastTime().call()
+        let p1 = window.app.fu.methods.LastTime().call({from:window.app.current_account})
         let p2 = window.app.udid.methods.balanceOf(account).call()
         // let p2 = window.app.usdt.methods.balanceOf(account).call()
         // let p3 = window.app.exchange.methods.balanceDetail(account).call()
@@ -144,6 +146,8 @@ async function syncBalance() {
         if (window.app.lastAccTime > 0){
             var ld = new Date(window.app.lastAccTime)
             $("last_Time").html(ld);
+        }else{
+            $("last_Time").html("you haven't get free udid");
         }
        
     
@@ -169,9 +173,6 @@ function attachEvents() {
     // })
 
     $("#exchange").click(async () => {
-
-
-
         try {
             await window.app.fu.methods.TransferUDID().send({from: window.app.current_account})
                     showMsg("成功", "success")
