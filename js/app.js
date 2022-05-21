@@ -230,7 +230,9 @@ function attachEvents() {
                     showMsg("成功", "success")
                     await syncBalance()
         } catch (error) {
-            jumpToEtherscan(window.app.current_account)
+            showMsg("错误", "failed")
+            // jumpToEtherscan(window.app.current_account)
+
         }
         
 
