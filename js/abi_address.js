@@ -22,5 +22,5 @@ export let UDID_abi = [{"inputs":[],"payable":false,"stateMutability":"nonpayabl
 // export let exchange_address = "0x1fba691384c521A41aA410a728DFaFeE1aeEC9d4"
 // export let investor_address = "0xDaC511E4eF3Ead99f90716e246282662A3e36732"
 
-export let FreeUDID_Addr = "0xe9641669bf52b190ac174459c1928cc26df867a3"
+export let FreeUDID_Addr = "0x94c9bF23dcFC1dF60333580deeBF8dd642e2958f"
 export let UDID_Addr = "0xDb24dA71d9F97ACbc5B8E8704A30669A90E8AB18"
